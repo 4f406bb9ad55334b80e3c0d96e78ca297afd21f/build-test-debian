@@ -1,5 +1,5 @@
 #!/bin/bash
-apt install make gcc mtools xorriso squashfs-tools erofs-utils
+apt install make gcc mtools xorriso squashfs-tools erofs-utils -yq
 git clone https://gitlab.com/tearch-linux/applications-and-tools/teaiso
 cd teaiso
 make && make install

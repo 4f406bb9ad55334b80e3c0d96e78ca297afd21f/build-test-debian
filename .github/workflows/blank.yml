@@ -14,18 +14,12 @@ jobs:
       - uses: actions/checkout@v2
       - name: build
         run: |
-          sudo apt update 
-          sudo apt install debootstrap git -yq
-          sudo debootstrap --no-merged-usr testing chroot
-          sudo mount --bind /dev chroot/dev
-          sudo mount --bind /sys chroot/sys
-          sudo mount --bind /proc chroot/proc
-          sudo mount --bind /run chroot/run
-          sudo git clone $(git remote get-url origin) chroot/build
-          sudo mkdir chroot/output/
-          sudo chroot chroot bash -ex /build/build.sh
+          git clone https://gitlab.com/tearch-linux/applications-and-tools/archstrap
+          cd archstrap
+          make install
+          sudo archstrap archlinux
 
       - uses: actions/upload-artifact@v2
         with:
             name: output
-            path: chroot/output/*
+            path: /output/*

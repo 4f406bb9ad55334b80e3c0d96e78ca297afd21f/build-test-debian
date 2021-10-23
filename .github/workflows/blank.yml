@@ -16,7 +16,7 @@ jobs:
         run: |
           git clone https://gitlab.com/tearch-linux/applications-and-tools/archstrap
           cd archstrap
-          make install
+          sudo make install
           sudo archstrap archlinux
 
       - uses: actions/upload-artifact@v2

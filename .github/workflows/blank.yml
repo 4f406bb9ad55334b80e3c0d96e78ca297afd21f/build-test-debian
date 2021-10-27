@@ -22,6 +22,8 @@ jobs:
           cd ..
           sudo mkteaiso -c archlinux
           sudo mkteaiso -p archlinux
+          sudo mkdir -p /output
+          sudo mv /var/teaiso/output/* /output/
 
       - uses: actions/upload-artifact@v2
         with:

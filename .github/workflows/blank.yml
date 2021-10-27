@@ -20,7 +20,7 @@ jobs:
           cd teaiso
           sudo make && sudo make install
           cd ..
-          mkteaiso -c archlinux
+          sudo mkteaiso -c archlinux
           sudo mkteaiso -p archlinux
 
       - uses: actions/upload-artifact@v2

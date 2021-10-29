@@ -20,8 +20,8 @@ jobs:
           cd teaiso
           sudo make && sudo make install
           cd ..
-          sudo mkteaiso -c archlinux
-          sudo mkteaiso -p archlinux
+          sudo mkteaiso -c tearch
+          sudo mkteaiso -p tearch
           sudo mkdir -p /output
           sudo mv /var/teaiso/output/* /output/
 
